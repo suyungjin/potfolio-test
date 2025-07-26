@@ -2,6 +2,7 @@ body { font-family: "Noto Sans", sans-serif; background-color: #ffffff; color: w
         .container { 
             background-color: #1a1a2e;
             max-width: 600px; 
+            width: 100%;
             margin: auto; 
             padding: 20px;
             border-radius: 20px; 
@@ -105,4 +106,12 @@ body { font-family: "Noto Sans", sans-serif; background-color: #ffffff; color: w
         @keyframes pulse {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.5; }
+        }
+
+        @media screen and (max-width: 450px) {
+                .container { 
+                width: 100%;
+                max-width: 80%;
+                box-shadow: none;
+            }
         }
