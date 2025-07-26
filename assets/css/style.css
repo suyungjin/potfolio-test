@@ -1,8 +1,8 @@
 body { font-family: "Noto Sans", sans-serif; background-color: #ffffff; color: white; text-align: center; margin: 0; padding: 0; }
-        .container { 
+    /*container seting*/
+    .container { 
             background-color: #1a1a2e;
             max-width: 600px; 
-            width: 32%;
             margin: auto; 
             padding: 20px;
             border-radius: 20px; 
@@ -38,6 +38,7 @@ body { font-family: "Noto Sans", sans-serif; background-color: #ffffff; color: w
             margin: 20px 0 20px 0;
         }
         .active { display: block; }
+        /*progress-bar*/
         .progress-bar {
             width: 100%;
             height: 8px;
@@ -107,11 +108,11 @@ body { font-family: "Noto Sans", sans-serif; background-color: #ffffff; color: w
             0%, 100% { opacity: 1; }
             50% { opacity: 0.5; }
         }
-
+        /*mobile size*/
         @media screen and (max-width: 450px) {
                 .container { 
-                width: 100%;
-                max-width: 80%;
+                width: 80%;
+                max-width: none;
                 box-shadow: none;
             }
         }
