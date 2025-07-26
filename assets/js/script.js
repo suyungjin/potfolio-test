@@ -17,7 +17,7 @@ const questions = [
 
         const totalQuestions = questions.length;
 
-        $(document).ready(function() {
+        $('#container').ready(function() {
             // 성별 선택 핸들러
             $('#select-man').on('click', function() { selectGender('man'); });
             $('#select-woman').on('click', function() { selectGender('woman'); });
