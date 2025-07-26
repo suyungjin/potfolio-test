@@ -1,0 +1,108 @@
+body { font-family: "Noto Sans", sans-serif; background-color: #ffffff; color: white; text-align: center; margin: 0; padding: 0; }
+        .container { 
+            background-color: #1a1a2e;
+            max-width: 600px; 
+            margin: auto; 
+            padding: 20px;
+            border-radius: 20px; 
+            box-shadow: 0 0 30px 10px rgb(0 0 0 / 70%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        button {
+            background-color: #ff6f91;
+            width: 80%;
+            border: none;
+            padding: 12px 24px;
+            margin: 20px;
+            border-radius: 12px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover { background-color: #ff4f78; }
+        #intro{
+            margin-top: 20px;
+        }
+        .gender{
+            width: 150px; margin: 20px auto;
+        }
+        #startBtn {display: none;}
+        .question, .result { display: none; margin: 40px 0 40px 0; }
+        .gender-select{ display: none; margin: 0;}
+        #question-text{
+            margin: 20px 0 20px 0;
+        }
+        .active { display: block; }
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: #ffffff;
+            border-radius: 4px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background-color: #ff0000; /* 기본 색상 */
+            border-radius: 4px;
+            transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out; /* 배경색 전환 효과 추가 */
+            width: 12.5%;
+        }
+        .ratio-bar {
+            height: 24px;
+            border-radius: 12px;
+            background-color: #444759;
+            margin: 15px auto;
+            max-width: 320px;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        .ratio-fill {
+            height: 100%;
+            border-radius: 12px 0 0 12px;
+            text-align: right;
+            color: white;
+            font-weight: bold;
+            padding-right: 12px;
+            line-height: 24px;
+            box-sizing: border-box;
+            position: relative;
+            transition: width 1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 8px;
+            font-family: "Noto Sans", sans-serif;font-weight: 700;
+            font-size: 14px;
+        }
+        .ratio-fill::after {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 0 8px rgba(255,255,255,0.5);
+            margin-left: 6px;
+            animation: pulse 1.5s infinite;
+        }
+        .ratio-fill.t {
+            background: linear-gradient(90deg, #ff758c, #ff7eb3);
+            border-radius: 12px 0 0 12px;
+        }
+        .ratio-fill.e {
+            background: linear-gradient(90deg, #fbc7a4, #fdd6b8);
+            color: #333;
+            border-radius: 12px 0 0 12px;
+        }
+        #result-img{display: none; width: 150px; margin: 20px auto;}
+        #result-description{white-space: pre-line;}
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }

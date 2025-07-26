@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/default.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js" defer></script>
+    <script src="./assets/js/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>햄뿡이의 테토력 에겐력 Test</h1>
+        <p id="intro">당신 안의 테토력 에겐력은 어떨까?</p>
+        <img class="gender" src="./assets/images/gender.png" alt="인트로이미지">
+        <div id="genderSelect" class="gender-select active">
+            <h2>성별을 선택해주세요</h2>
+            <button id="select-man">남자</button>
+            <button id="select-woman">여자</button>
+        </div>
+
+        <button id="startBtn"">테스트 시작하기</button>
+
+        <div id="questionBox" class="question">
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+            
+            <h2 id="question-text"></h2>
+            <button id="choice-a"></button>
+            <button id="choice-b"></button>
+        </div>
+
+        <div id="resultBox" class="result">
+            <h2 id="result-title"></h2>
+            <img id="result-img" alt="이미지">
+            <p id="result-description"></p>
+            <div class="ratio-bar">
+                <div id="ratio-fill" class="ratio-fill">
+                    <span id="ratio-text"></span>
+                </div>
+            </div>
+            <button id="restartBtn">다시 하기</button>
+        </div>
+    </div>
+    
+  </div>
+</body>
+</html>
