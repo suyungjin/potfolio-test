@@ -263,39 +263,16 @@ const questions = [
         });
 
         $(document).ready(function() {
-        const $container = $('#container'); // #container 요소 선택
+        const $container = $('#container');
 
-        // 미디어 쿼리 정의: 화면 너비가 450px 이하일 때
-        const mediaQuery = window.matchMedia('(max-width: 450px)');
-
-        // 미디어 쿼리 상태 변화를 감지하는 함수
-        function handleMediaQueryChange(e) {
-            if (e.matches) {
-                // 화면 너비가 450px 이하일 때
-                $container.css({
+        // 결과 화면 포지션 초기화
+         $container.css({
                     'position': 'relative',
                     'top': '0',
                     'left': '0',
                     'transform': 'none'
                 });
-                console.log('화면 너비 450px 이하: 스타일 변경됨');
-            } else {
-                // 화면 너비가 450px 초과일 때 (원래 스타일로 복귀)
-                $container.css({
-                    'position': 'absolute',
-                    'top': '50%',
-                    'left': '50%',
-                    'transform': 'translate(-50%, -50%)'
-                });
-                console.log('화면 너비 450px 초과: 원래 스타일로 복귀');
-            }
-        }
 
-        // 초기 로드 시 미디어 쿼리 상태 확인
-        handleMediaQueryChange(mediaQuery);
-
-        // 미디어 쿼리 리스너 추가: 화면 크기 변경될 때마다 handleMediaQueryChange 함수 실행
-        mediaQuery.addEventListener('change', handleMediaQueryChange);
         });
             
         }
