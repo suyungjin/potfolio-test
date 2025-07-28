@@ -184,4 +184,118 @@ const questions = [
             const ratioFill = $('#ratio-fill');
             ratioFill.css('width', percent + '%').removeClass('e t').addClass(barClass);
             $('#ratio-text').text(ratioText);
+
+            // 연락처 양식 변수
+            const form = document.querySelector("[data-form]");
+            const formInputs = document.querySelectorAll("[data-form-input]");
+            const formBtn = document.querySelector("[data-form-btn]");
+            const ContactForm = document.getElementById("contact-form")
+
+            // 폼 입력 항목 전체에 이벤트 적용
+            for (let i = 0; i < formInputs.length; i++) {
+            formInputs[i].addEventListener("input", function () {
+
+                // 폼 유효성 검사
+                if (form.checkValidity()) {
+                formBtn.removeAttribute("enabled");
+                } else {
+                formBtn.setAttribute("enabled", "");
+                }
+
+            });
+            }
+
+            //이메일js 적용
+
+            ContactForm.addEventListener("submit", function(e) {
+                e.preventDefault();
+
+                emailjs.sendForm("service_kggqyuc", "template_d2iaw6c", this)
+                .then(function(response) {
+                    alert("이메일이 성공적으로 발송되었습니다");
+                }, function(error) {
+                    alert("이메일 발송에 실패하였습니다");
+                    console.error(error);
+                });
+            });
+
+            //사진 업로드
+
+            $(document).ready(function() {
+            // 받는 사람 이메일 주소를 여기에 입력하세요.
+            const recipientEmail = 'fly737000@gmail.com'; 
+            const emailSubject = '사진 공유';
+            const emailBody = '안녕하세요,\n\n선택한 사진을 보내드립니다.';
+
+            // jQuery를 사용하여 HTML 요소를 선택합니다.
+            const $fileUploader = $('#file-uploader');
+            const $fileNameSpan = $('#file-name');
+            const $sendButton = $('#send-button');
+
+            // 페이지 로드 시 버튼을 비활성화합니다.
+            $sendButton.prop('disabled', true);
+
+            // 파일 선택(change) 이벤트 핸들러
+            $fileUploader.on('change', function() {
+                const file = this.files[0];
+                if (file) {
+                    // 선택된 파일 이름을 표시합니다.
+                    $fileNameSpan.text(file.name);
+                    // 버튼을 활성화합니다.
+                    $sendButton.prop('disabled', false);
+                } else {
+                    // 파일이 선택되지 않았을 경우
+                    $fileNameSpan.text('선택된 파일 없음');
+                    $sendButton.prop('disabled', true);
+                }
+            });
+
+            // 버튼 클릭(click) 이벤트 핸들러
+            $sendButton.on('click', function() {
+                const file = $fileUploader.get(0).files[0];
+                if (file) {
+                    const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody + '\n\n파일명: ' + file.name)}`;
+                    window.location.href = mailtoLink;
+                } else {
+                    alert('먼저 파일을 선택해주세요.');
+                }
+            });
+        });
+
+        $(document).ready(function() {
+        const $container = $('#container'); // #container 요소 선택
+
+        // 미디어 쿼리 정의: 화면 너비가 450px 이하일 때
+        const mediaQuery = window.matchMedia('(max-width: 450px)');
+
+        // 미디어 쿼리 상태 변화를 감지하는 함수
+        function handleMediaQueryChange(e) {
+            if (e.matches) {
+                // 화면 너비가 450px 이하일 때
+                $container.css({
+                    'position': 'relative',
+                    'top': '0',
+                    'left': '0',
+                    'transform': 'none'
+                });
+                console.log('화면 너비 450px 이하: 스타일 변경됨');
+            } else {
+                // 화면 너비가 450px 초과일 때 (원래 스타일로 복귀)
+                $container.css({
+                    'position': 'absolute',
+                    'top': '50%',
+                    'left': '50%',
+                    'transform': 'translate(-50%, -50%)'
+                });
+                console.log('화면 너비 450px 초과: 원래 스타일로 복귀');
+            }
+        }
+
+        // 초기 로드 시 미디어 쿼리 상태 확인
+        handleMediaQueryChange(mediaQuery);
+
+        // 미디어 쿼리 리스너 추가: 화면 크기 변경될 때마다 handleMediaQueryChange 함수 실행
+        mediaQuery.addEventListener('change', handleMediaQueryChange);
+        });
+            
         }

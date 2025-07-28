@@ -115,6 +115,100 @@ body { font-family: "Noto Sans", sans-serif; background-color: #ffffff; color: w
             0%, 100% { opacity: 1; }
             50% { opacity: 0.5; }
         }
+
+
+      /*Contact*/
+        .contact-form { 
+        margin-bottom: 10px; 
+        }
+
+        .form-title { margin-bottom: 20px; }
+
+        .input-wrapper {
+        display:block;
+        }
+
+        .form-input {
+        color:#000000;
+        padding: 13px 20px;
+        border: 1px solid var(--jet);
+        border-radius: 14px;
+        outline: none;
+        margin-bottom: 30px;
+        }
+
+        .form-input::placeholder { font-weight: var(--fw-500); }
+
+        .form-input:focus { border-color:#ff6600 }
+
+        textarea.form-input {
+        min-height: 30px;
+        height: 30px;
+        max-height: 200px;
+        resize: vertical;
+        margin-bottom: 25px;
+        align-content: center;
+        }
+
+        textarea.form-input::-webkit-resizer { display: none; }
+
+        .form-input:focus:invalid { border-color:#444759 }
+
+        .form-btn {
+        width: 80%;
+        }
+
+        .form-btn ion-icon { font-size: 16px; }
+
+        .form-btn:hover { background:#0f6121; }
+
+        .form-btn:hover::before { background: #ffd000; }
+
+        .form-btn:disabled {
+        cursor: not-allowed;
+        }
+
+        .form-btn:disabled:hover { background:#0f6121 }
+
+        .form-btn:disabled:hover::before { background: #333; }
+
+        .file-input-wrapper {
+        position: relative;
+        margin-bottom: 25px;
+        }
+
+        #file-uploader {
+            display: none;
+        }
+
+        .file-label {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+
+        .file-label:hover {
+            background-color: #0056b3;
+        }
+
+        #file-name {
+            display: block;
+            margin-top: 15px;
+            color: #555;
+            font-style: italic;
+        }
+
+        .warning {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #dc3545;
+        }
+
         /*mobile size*/
         @media screen and (max-width: 450px) {
                 .container { 

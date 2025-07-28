@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="./assets/js/jquery-3.7.1.js" defer></script>
     <script src="./assets/js/script.js" defer></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "T5i8NO7A8E568KasH",
+      });
+   })();
+  </script>
 </head>
 <body>
     <div class="container" id="container">
@@ -41,7 +51,43 @@
                     <span id="ratio-text"></span>
                 </div>
             </div>
-            <button id="restartBtn">다시 하기</button>
+
+             <section class="contact-form">
+
+                <h3 class="h3 form-title">양식폼</h3>
+
+                <form id="contact-form" class="form" data-form>
+
+                 <div class="input-wrapper">
+                  <textarea name="message" id="name" class="form-input" placeholder="이름/나이/성별" required data-form-input></textarea>
+
+                 <textarea name="message" id="tel" class="form-input" placeholder="연락처" required data-form-input></textarea>
+
+                <textarea name="message" id="interview" class="form-input" placeholder="인터뷰 가능 요일/시간" required data-form-input></textarea>
+
+                <textarea name="message" id="travel" class="form-input" placeholder="갔었던 국내 여행지" required data-form-input></textarea>
+
+                <textarea name="message" id="gotcha" class="form-input" placeholder="추첨권 신청 Yes or No" required data-form-input></textarea>
+
+                <textarea name="message" id="personel" class="form-input" placeholder="퍼스널 컬러 신청 (여행갈 때 입을 옷 고민)" required data-form-input></textarea>
+
+                </div>
+
+                <div class="file-input-wrapper">
+                <input type="file" id="file-uploader" accept="image/*">
+                <label for="file-uploader" class="file-label">파일 선택</label>
+                <span id="file-name">선택된 파일 없음</span>
+                </div>
+                <p>전송할 사진을 선택해주세요.</p>
+                <button id="send-button" class="form-btn" type="submit" data-form-btn>
+                <ion-icon name="paper-plane"></ion-icon>
+                <span>양식 보내기</span>
+                </button>
+
+                </form>
+
+                </section>
+            <button id="restartBtn">테스트 다시 하기</button>
         </div>
     </div>
     
