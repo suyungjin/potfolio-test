@@ -204,6 +204,9 @@ const questions = [
             }
 
             //이메일js 적용
+            emailjs.init({
+            publicKey: "T5i8NO7A8E568KasH"
+            });
 
             ContactForm.addEventListener("submit", function(e) {
                 e.preventDefault();
